@@ -23,3 +23,10 @@ By default, clicking on the WP logo or the logo link on the WP-login page takes 
 ## Support
 Theme Customization API was added in Wordpress 3.4. This means that this plugin will only work on WordPress engine version 3.4 and above.
 
+##Credits
+WP-login-customizer is maintained by `Omeiza Owuda` and `Lucasdozie`.
+
+
+## Contribution
+Contributions to this api are always welcome, no matter how small they might seem. 
+

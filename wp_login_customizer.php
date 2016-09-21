@@ -127,7 +127,7 @@ function login_customizer() {
 <style type="text/css">
     html, body {
         <?php if( !empty($bg_img)) : ?>
-            background-image: url(<?php echo $bg_img; ?>) !important;
+            background-image: url('<?php echo $bg_img; ?>') !important;
             background-position: <?php echo $bg_position; ?> !important;
         <?php endif; ?>
     }
