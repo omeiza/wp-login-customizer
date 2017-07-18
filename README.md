@@ -13,9 +13,9 @@ Sometimes we feel the need to change how the WP Login Page look like. The things
 This plugin will help you make these changes right from your admin dashboard without writing a line of code.
 
 ## Usage
-1. You will need to download/clone this repository and copy it to your WordPress plugin folder.
-2. Then need to activate the plugin on your dashboard.
-3. Hover on the appearance button on your dashboard and click on customizer to change the customizer setting, the plugin logo settings and the logo background settings.
+1. Download/clone this repository and copy it to your WordPress plugin folder.
+2. Activate the plugin on your dashboard.
+3. Click on the customizer(submenu of appearance) to change the customizer setting, the plugin logo settings and the logo background settings.
 
 ## Bonus
 By default, clicking on the WP logo or the logo link on the WP-login page takes you to http://wordpress.org. This plugin ensures that it takes you to your website’s homepage.
