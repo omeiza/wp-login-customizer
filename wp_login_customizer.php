@@ -1,13 +1,13 @@
 <?php
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+defined( 'ABSPATH' ) or die('No script kiddies please!');
 
 function login_customize_register($wp_customize) {
-    $wp_customize->add_panel( 'login_panel', array(
+    $wp_customize->add_panel('login_panel', [
         'priority'       => 30,
         'capability'     => 'edit_theme_options',
         'title'          => __('Wordpress Login Customizer', login_customize),
         'description'    => __('This section allows you to customize the login page', login_customize),
-    ));
+    ]);
 
     // Login Screen Logo Section
     $wp_customize->add_section('login_logo_section', array(
@@ -112,55 +112,54 @@ function login_customize_register($wp_customize) {
 
 // Register the login_customize_register function created above to WP built in customize_register function
 add_action('customize_register', 'login_customize_register');
-
-
 function login_customizer() {
-  $logo_url = get_option('login_logo');
-  $logo_width = get_option('login_logo_width');
-  $logo_height = get_option('login_logo_height');
-  $bg_img = get_option('login_bg_image');
-  $bg_position = get_option('login_bg_position');
-  $bg_color = get_option('login_background_color');
-?>
+    $logo_url = get_option('login_logo');
+    $logo_width = get_option('login_logo_width');
+    $logo_height = get_option('login_logo_height');
+    $bg_img = get_option('login_bg_image');
+    $bg_position = get_option('login_bg_position');
+    $bg_color = get_option('login_background_color'); ?>
 
-<!-- Stylesheets to be generated as a result of the above function -->
-<style type="text/css">
-    html, body {
-        <?php if( !empty($bg_img)) : ?>
-            background-image: url(<?php echo $bg_img; ?>) !important;
-            background-position: <?php echo $bg_position; ?> !important;
-        <?php endif; ?>
-    }
+    <!-- Stylesheets to be generated as a result of the above function -->
+    <style type="text/css">
+        html, body {
+            <?php if (!empty($bg_img)) : ?>
+                background-image: url(<?php echo $bg_img; ?>) !important;
+                background-position: <?php echo $bg_position; ?> !important;
+            <?php endif; ?>
+        }
 
-    html, body.login {
-        background-color: <?php echo $bg_color; ?> !important;
-    }
+        html, body.login {
+            background-color: <?php echo $bg_color; ?> !important;
+        }
 
-    body.login div#login h1 a {
-        <?php if( !empty($logo_url)) : ?>
-          background-image: url(<?php echo $logo_url; ?>) !important;
-        <?php endif; ?>
+        body.login div#login h1 a {
+            <?php if ( !empty($logo_url)) : ?>
+            background-image: url(<?php echo $logo_url; ?>) !important;
+            <?php endif; ?>
 
-        <?php if( !empty($logo_width)) : ?>
-            width: <?php echo $logo_width; ?> !important;
-        <?php endif; ?>
+            <?php if ( !empty($logo_width)) : ?>
+                width: <?php echo $logo_width; ?> !important;
+            <?php endif; ?>
 
-        <?php if( !empty($logo_height)) : ?>
-            height: <?php echo $logo_height; ?> !important;
-        <?php endif; ?>
+            <?php if ( !empty($logo_height)) : ?>
+                height: <?php echo $logo_height; ?> !important;
+            <?php endif; ?>
 
-        <?php if( !empty($logo_width) || !empty($logo_height)) : ?>
-            background-size: <?php echo $logo_width; ?> <?php echo $logo_height; ?> !important;
-        <?php endif; ?>
-    }
-</style>
-
-<?php }
+            <?php if ( !empty($logo_width) || !empty($logo_height)) : ?>
+                background-size: <?php echo $logo_width; ?> <?php echo $logo_height; ?> !important;
+            <?php endif; ?>
+        }
+    </style> <?php 
+}
 
 add_action( 'login_enqueue_scripts', 'login_customizer' );
 
-// Bonus!!! By default, the login screen logo once clicked links to http://wordpress.org. The below function helps the logo link to your website's homepage
-function login_logo_url() {
-    return get_bloginfo( 'url' );
-}
+/* 
+**  Bonus!!! By default, the login screen logo once clicked links to http://wordpress.org. 
+**  The below function helps the logo link to your website's homepage
+*/ 
 add_filter( 'login_headerurl', 'login_logo_url' );
+function login_logo_url() {
+    return get_bloginfo('url');
+}
