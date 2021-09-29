@@ -1,4 +1,4 @@
-# WP-login-customizer
+# wp-login-customizer
 WP-login-customizer is a plugin built to help you customize the WordPress login page by taking advantage of [WordPress theme Customizer API](http://https://codex.wordpress.org/Theme_Customization_API). 
 
 The Customizer is a framework for live-previewing any change to WordPress. It provides a simple and consistent interface for users to customize various aspects of their theme and their site, from colors and layouts to widgets, menus, and more. Themes and plugins alike can add custom options to the Customizer. The Customizer is the canonical way to add options to your theme.
